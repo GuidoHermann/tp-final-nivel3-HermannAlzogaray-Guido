@@ -1,0 +1,18 @@
+C:\Users\guido\Desktop\TPFinalNivel2_HermannAlzogaray\presentacion\negocio\bin\Debug\negocio.dll
+C:\Users\guido\Desktop\TPFinalNivel2_HermannAlzogaray\presentacion\negocio\bin\Debug\negocio.pdb
+C:\Users\guido\Desktop\TPFinalNivel2_HermannAlzogaray\presentacion\negocio\bin\Debug\dominio.dll
+C:\Users\guido\Desktop\TPFinalNivel2_HermannAlzogaray\presentacion\negocio\bin\Debug\dominio.pdb
+C:\Users\guido\Desktop\TPFinalNivel2_HermannAlzogaray\presentacion\negocio\obj\Debug\negocio.csproj.AssemblyReference.cache
+C:\Users\guido\Desktop\TPFinalNivel2_HermannAlzogaray\presentacion\negocio\obj\Debug\negocio.csproj.CoreCompileInputs.cache
+C:\Users\guido\Desktop\TPFinalNivel2_HermannAlzogaray\presentacion\negocio\obj\Debug\negocio.csproj.CopyComplete
+C:\Users\guido\Desktop\TPFinalNivel2_HermannAlzogaray\presentacion\negocio\obj\Debug\negocio.dll
+C:\Users\guido\Desktop\TPFinalNivel2_HermannAlzogaray\presentacion\negocio\obj\Debug\negocio.pdb
+C:\Users\guido\Desktop\Curso C# Nivel 3 TP\TPFinalNivel3HermannAlzogarayGuido\negocio\bin\Debug\negocio.dll
+C:\Users\guido\Desktop\Curso C# Nivel 3 TP\TPFinalNivel3HermannAlzogarayGuido\negocio\bin\Debug\negocio.pdb
+C:\Users\guido\Desktop\Curso C# Nivel 3 TP\TPFinalNivel3HermannAlzogarayGuido\negocio\bin\Debug\dominio.dll
+C:\Users\guido\Desktop\Curso C# Nivel 3 TP\TPFinalNivel3HermannAlzogarayGuido\negocio\bin\Debug\dominio.pdb
+C:\Users\guido\Desktop\Curso C# Nivel 3 TP\TPFinalNivel3HermannAlzogarayGuido\negocio\obj\Debug\negocio.csproj.AssemblyReference.cache
+C:\Users\guido\Desktop\Curso C# Nivel 3 TP\TPFinalNivel3HermannAlzogarayGuido\negocio\obj\Debug\negocio.csproj.CoreCompileInputs.cache
+C:\Users\guido\Desktop\Curso C# Nivel 3 TP\TPFinalNivel3HermannAlzogarayGuido\negocio\obj\Debug\negocio.csproj.Up2Date
+C:\Users\guido\Desktop\Curso C# Nivel 3 TP\TPFinalNivel3HermannAlzogarayGuido\negocio\obj\Debug\negocio.dll
+C:\Users\guido\Desktop\Curso C# Nivel 3 TP\TPFinalNivel3HermannAlzogarayGuido\negocio\obj\Debug\negocio.pdb

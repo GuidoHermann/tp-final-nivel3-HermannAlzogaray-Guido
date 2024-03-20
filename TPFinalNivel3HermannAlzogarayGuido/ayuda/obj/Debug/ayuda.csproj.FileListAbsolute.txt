@@ -1,0 +1,11 @@
+C:\Users\guido\Desktop\Curso C# Nivel 3 TP\TPFinalNivel3HermannAlzogarayGuido\ayuda\bin\Debug\ayuda.dll
+C:\Users\guido\Desktop\Curso C# Nivel 3 TP\TPFinalNivel3HermannAlzogarayGuido\ayuda\bin\Debug\ayuda.pdb
+C:\Users\guido\Desktop\Curso C# Nivel 3 TP\TPFinalNivel3HermannAlzogarayGuido\ayuda\bin\Debug\dominio.dll
+C:\Users\guido\Desktop\Curso C# Nivel 3 TP\TPFinalNivel3HermannAlzogarayGuido\ayuda\bin\Debug\negocio.dll
+C:\Users\guido\Desktop\Curso C# Nivel 3 TP\TPFinalNivel3HermannAlzogarayGuido\ayuda\bin\Debug\dominio.pdb
+C:\Users\guido\Desktop\Curso C# Nivel 3 TP\TPFinalNivel3HermannAlzogarayGuido\ayuda\bin\Debug\negocio.pdb
+C:\Users\guido\Desktop\Curso C# Nivel 3 TP\TPFinalNivel3HermannAlzogarayGuido\ayuda\obj\Debug\ayuda.csproj.AssemblyReference.cache
+C:\Users\guido\Desktop\Curso C# Nivel 3 TP\TPFinalNivel3HermannAlzogarayGuido\ayuda\obj\Debug\ayuda.csproj.CoreCompileInputs.cache
+C:\Users\guido\Desktop\Curso C# Nivel 3 TP\TPFinalNivel3HermannAlzogarayGuido\ayuda\obj\Debug\ayuda.csproj.Up2Date
+C:\Users\guido\Desktop\Curso C# Nivel 3 TP\TPFinalNivel3HermannAlzogarayGuido\ayuda\obj\Debug\ayuda.dll
+C:\Users\guido\Desktop\Curso C# Nivel 3 TP\TPFinalNivel3HermannAlzogarayGuido\ayuda\obj\Debug\ayuda.pdb

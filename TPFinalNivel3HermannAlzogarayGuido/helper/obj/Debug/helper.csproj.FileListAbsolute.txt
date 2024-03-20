@@ -1,0 +1,2 @@
+C:\Users\guido\Desktop\Curso C# Nivel 3 TP\TPFinalNivel3HermannAlzogarayGuido\helper\obj\Debug\helper.csproj.AssemblyReference.cache
+C:\Users\guido\Desktop\Curso C# Nivel 3 TP\TPFinalNivel3HermannAlzogarayGuido\helper\obj\Debug\helper.csproj.CoreCompileInputs.cache
