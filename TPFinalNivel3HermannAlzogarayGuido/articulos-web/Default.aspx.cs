@@ -14,21 +14,26 @@ namespace articulos_web
         public List<Articulo> ListaArticulos { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            //cargo el load de la pagina default con las cartas desde la DB
-            ArticuloNegocio negocio = new ArticuloNegocio();
-            ListaArticulos = negocio.listar();
-
-
-            if (!IsPostBack)
+            try
             {
-                repCartas.DataSource = ListaArticulos;
-                repCartas.DataBind();
+                //cargo el load de la pagina default con las cartas desde la DB
+                ArticuloNegocio negocio = new ArticuloNegocio();
+                ListaArticulos = negocio.listar();
+                if (!IsPostBack)
+                {
+                    repCartas.DataSource = ListaArticulos;
+                    repCartas.DataBind();
+                }
+            }
+            catch (Exception ex)
+            {
+                ManejoError.Agrego(HttpContext.Current, ex);
             }
         }
 
         protected void btnVerDetalle_Click(object sender, EventArgs e)
         {
-
+            //redigiro a la pagila de detalle utilizando el id del boton
             string idArticulo = ((LinkButton)sender).CommandArgument;
             Response.Redirect("DetalleArticulo.aspx?idArticulo=" + idArticulo);
         }
@@ -37,8 +42,9 @@ namespace articulos_web
         {
             try
             {
+                //agrego el id para buscar el articulo
                 string idArticulo = ((LinkButton)sender).CommandArgument;
-
+                //pregunto si hay un usuario en sesion
                 if (Seguridad.sesionActiva(Session["usuario"]))
                 {
                     Usuario usuario = (Usuario)Session["usuario"];
@@ -49,15 +55,12 @@ namespace articulos_web
                 }
                 else
                 {
-                    
                     Response.Redirect("Login.aspx");
                 }
             }
             catch (Exception ex)
             {
-
-                Session.Add("error", ex.ToString());
-                Response.Redirect("Error.aspx", false);
+                ManejoError.Agrego(HttpContext.Current, ex);
             }
         }
     }

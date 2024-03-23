@@ -17,6 +17,7 @@ namespace negocio
             AccesoDb datos = new AccesoDb();
             try
             {
+                //pregunto si no existe un favorito ya con ese id
                 if(!ExisteFavorito(usuario, articulo))
                 {
                     datos.establecerConsulta("Insert INTO FAVORITOS (IdUser, IdArticulo) values(@IdUser,@IdArticulo)");

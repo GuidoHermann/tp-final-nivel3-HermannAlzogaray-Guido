@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Web;
+
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using dominio;
+using static System.Collections.Specialized.BitVector32;
 
 namespace negocio
 {
@@ -24,5 +27,7 @@ namespace negocio
             Usuario usuario = user != null ? (Usuario)user : null;
             return usuario != null ? usuario.Admin : false;
         }
+
+        
     }
 }

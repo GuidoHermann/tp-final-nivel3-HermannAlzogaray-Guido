@@ -67,12 +67,12 @@
                     <asp:BoundField HeaderText="Nombre" DataField="Nombre" ItemStyle-CssClass="align-middle" />
                     <asp:BoundField HeaderText="Marca" DataField="Marca.Descripcion" ItemStyle-CssClass="align-middle" />
                     <asp:BoundField HeaderText="Categoria" DataField="Categoria.Descripcion" ItemStyle-CssClass="align-middle" />
-                    <asp:BoundField HeaderText="Precio" DataField="Precio" ItemStyle-CssClass="align-middle" />
+                    <asp:BoundField HeaderText="Precio" DataField="Precio" ItemStyle-CssClass="align-middle" DataFormatString="{0:F2}" />
                     <asp:CommandField HeaderText="Acción" ShowSelectButton="true" SelectText="✍" ItemStyle-CssClass="align-middle" />
                 </Columns>
             </asp:GridView>
             <div class="mb-3">
-            <asp:LinkButton Text="Nuevo articulo" ID="btnNuevoArticulo" OnClick="btnNuevoArticulo_Click" CssClass="btn btn-primary mt-3" runat="server" />
+            <asp:LinkButton Text="Nuevo articulo" ID="btnNuevoArticulo" OnClick="btnNuevoArticulo_Click" CausesValidation="false" CssClass="btn btn-primary mt-3" runat="server" />
 
             </div>
         </div>

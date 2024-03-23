@@ -11,16 +11,19 @@ namespace articulos_web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
-                if (Session["error"] != null)
-                {
-                    lblError.Text = Session["error"].ToString();
-                }
-                else
-                {
-                    lblError.Text = "Si estas viendo esto es que no hay error ?....";
-                  
-                }
+            // Verificar si hay un error en la sesión
+            if (Session["Error"] != null)
+            {
+                
+                lblError.Text = Session["Error"] as string;
+                
+                Session.Remove("Error");
+            }
+            else
+            {
+                
+                lblError.Text = "No se encontró ningún error.";
+            }
         }
     }
 }

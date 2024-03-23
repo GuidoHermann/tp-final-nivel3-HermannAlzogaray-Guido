@@ -79,6 +79,7 @@ namespace negocio
                 datos.establecerParametro("@nombre", usuario.Nombre);
                 datos.establecerParametro("@apellido", usuario.Apellido);
                 datos.establecerParametro("id", usuario.Id);
+                datos.ejecutarAccion();
             }
             catch (Exception ex)
             {
@@ -89,6 +90,29 @@ namespace negocio
             {
                 datos.cerrarConexion();
             }
+        }
+
+        public bool ExisteUsuario(string email)
+        {
+                AccesoDb datos = new AccesoDb();
+            try
+            {
+                datos.establecerConsulta("SELECT COUNT(*) FROM USERS WHERE email = @email");
+                datos.establecerParametro("@email", email);
+                return datos.ejecutarAccionScalar() > 0;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+            
+            
         }
 
 

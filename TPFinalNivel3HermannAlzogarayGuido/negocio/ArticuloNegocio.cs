@@ -18,7 +18,7 @@ namespace negocio
             try
             {
                 string consulta = "Select A.Id ArticuloId, Codigo , Nombre, A.Descripcion ArticuloDescripcion, ImagenUrl, Precio, A.IdMarca IdMarca, A.IdCategoria IdCategoria, C.Descripcion DescripcionCategoria, M.Descripcion DescripcionMarca From ARTICULOS A, CATEGORIAS C, MARCAS M Where C.Id = A.IdCategoria AND M.Id = A.IdMarca";
-                //datos.establecerConsulta("Select A.Id ArticuloId, Codigo , Nombre, A.Descripcion ArticuloDescripcion, ImagenUrl, Precio, A.IdMarca IdMarca, A.IdCategoria IdCategoria, C.Descripcion DescripcionCategoria, M.Descripcion DescripcionMarca From ARTICULOS A, CATEGORIAS C, MARCAS M Where C.Id = A.IdCategoria AND M.Id = A.IdMarca");
+                //si se agrega un id lo uso como filtro
                 if (id != "")
                     consulta += " and A.Id = " + id;
                 datos.establecerConsulta(consulta);
@@ -30,7 +30,7 @@ namespace negocio
                     aux.Marca = new Marca();
                     aux.Categoria = new Categoria();
 
-
+                    //asigno los valores
                     aux.IdArticulo = (int)datos.Lector["ArticuloId"];
                     aux.CodigoArticulo = (string)datos.Lector["Codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
@@ -52,9 +52,6 @@ namespace negocio
 
                     listadb.Add(aux);
                 }
-
-
-
 
                 return listadb;
             }

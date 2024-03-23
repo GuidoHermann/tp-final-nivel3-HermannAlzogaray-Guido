@@ -15,12 +15,20 @@
     <div class="container">
 
         <header class="bg-dark text-white text-center rounded-3">
-            <h1>Hola!</h1>
-            <p>Llegaste a la página de artículos.</p>
-
+            <div class="welcome-message">
+                <h1>¡Bienvenido al home!</h1>
+                <p>Aca encontraras una colección de artículos.</p>
+                <p>¡Puedes agregarlos a favoritos o verlos en detalle!</p>
+                <p>Solo si estas logueado &#x1F61C; </p>
+            </div>
         </header>
 
         <main>
+
+            <%if (repCartas.Items.Count > 0)
+                {
+
+            %>
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 <asp:Repeater ID="repCartas" runat="server">
                     <ItemTemplate>
@@ -55,6 +63,19 @@
                     </ItemTemplate>
                 </asp:Repeater>
             </div>
+            <%}
+                else
+                {  %>
+            <div class="bg-dark text-white text-center rounded-3">
+                <div>
+                    <h3>No hay ningún artículo en home!!!!</h3>                  
+                    <p>Si quieres agregar un artículo, ve al formulario.</p>
+                </div>
+                <div>
+                    <a href="FormularioArticulo.aspx" class="mb-3 btn btn-secondary">Formulario</a>
+                </div>
+            </div>
+            <%} %>
         </main>
     </div>
 

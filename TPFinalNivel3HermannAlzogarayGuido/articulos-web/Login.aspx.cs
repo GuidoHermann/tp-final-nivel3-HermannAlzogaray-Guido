@@ -13,15 +13,19 @@ namespace articulos_web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            Usuario usuario = new Usuario();
-            UsuarioNegocio negocio = new UsuarioNegocio();
             try
             {
+                lblPassError.Visible = false;
+                Page.Validate();
+                if (!Page.IsValid)
+                    return;
+
+                Usuario usuario = new Usuario();
+                UsuarioNegocio negocio = new UsuarioNegocio();
                 usuario.Email = txtEmail.Text;
                 usuario.Pass = txtPassword.Text;
 
@@ -33,15 +37,13 @@ namespace articulos_web
                 }
                 else
                 {
-                    Session.Add("error", "Error inesperado!");
-                    Response.Redirect("Error.aspx", false);
+                    lblPassError.Text = "&#128683; Usuario o contraseña incorrectos";
+                    lblPassError.Visible = true;
                 }
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
-
-                Session.Add("error", ex.ToString());
-                Response.Redirect("Error.aspx", false);
+                ManejoError.Agrego(HttpContext.Current, ex);
             }
         }
     }

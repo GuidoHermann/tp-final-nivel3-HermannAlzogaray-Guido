@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using negocio;
 using dominio;
+using System.Globalization;
 
 
 namespace articulos_web
@@ -24,28 +25,24 @@ namespace articulos_web
                 {
                     CategoriaNegocio categoria = new CategoriaNegocio();
                     MarcaNegocio marca = new MarcaNegocio();
-
                     List<Categoria> listaCategoria = categoria.listarCategoria();
                     List<Marca> listaMarca = marca.listarMarca();
-
                     ddlCategoria.DataSource = listaCategoria;
                     ddlCategoria.DataValueField = "Id";
                     ddlCategoria.DataTextField = "Descripcion";
                     ddlCategoria.DataBind();
-
                     ddlMarca.DataSource = listaMarca;
                     ddlMarca.DataValueField = "Id";
                     ddlMarca.DataTextField = "Descripcion";
                     ddlMarca.DataBind();
                 }
-
                 //pregunto si trae un ID entonces es modificacion
                 string id = Request.QueryString["id"] != null ? Request.QueryString["id"].ToString() : "";
                 if (id != "" && !IsPostBack)
                 {
                     ArticuloNegocio negocio = new ArticuloNegocio();
                     Articulo seleccionado = (negocio.listar(id))[0];
-
+                    //lo agrego a la sesion para usarlo
                     Session.Add("articuloSeleccionado", seleccionado);
 
                     //cargo los campos para la modificacion
@@ -55,7 +52,6 @@ namespace articulos_web
                     txtDescripcion.Text = seleccionado.Descripcion;
                     txtImagen.Text = seleccionado.Imagen;
                     txtPrecio.Text = seleccionado.Precio.ToString();
-
                     ddlMarca.SelectedValue = seleccionado.Marca.Id.ToString();
                     ddlCategoria.SelectedValue = seleccionado.Categoria.Id.ToString();
                     txtImagen_TextChanged(sender, e);
@@ -63,8 +59,7 @@ namespace articulos_web
             }
             catch (Exception ex)
             {
-                Session.Add("error", ex.ToString());
-                Response.Redirect("Error.aspx");
+                ManejoError.Agrego(HttpContext.Current, ex);
             }
         }
 
@@ -75,32 +70,21 @@ namespace articulos_web
                 Page.Validate();
                 if (!Page.IsValid)
                     return;
-                
-
-
-
-
-
 
                 //asigno los datos de las textbox a un articulo para llevarlo a la base datos
                 Articulo nuevo = new Articulo();
                 ArticuloNegocio negocio = new ArticuloNegocio();
-
                 nuevo.CodigoArticulo = txtCodigo.Text;
                 nuevo.Nombre = txtNombre.Text;
                 nuevo.Descripcion = txtDescripcion.Text;
-
                 nuevo.Marca = new Marca();
                 nuevo.Marca.Id = int.Parse(ddlMarca.SelectedValue);
-
                 nuevo.Categoria = new Categoria();
                 nuevo.Categoria.Id = int.Parse(ddlCategoria.SelectedValue);
-
                 nuevo.Imagen = txtImagen.Text;
-                nuevo.Precio = int.Parse(txtPrecio.Text);
+                nuevo.Precio = decimal.Parse(txtPrecio.Text, CultureInfo.InvariantCulture);
 
                 //pregunto si tiene un ID y si es asi lo modifico, si no agrego un nuevo articulo
-
                 if (Request.QueryString["id"] != null)
                 {
                     nuevo.IdArticulo = int.Parse(txtId.Text);
@@ -113,16 +97,11 @@ namespace articulos_web
             }
             catch (Exception ex)
             {
-
-                Session.Add("error", ex.ToString());
-                Response.Redirect("Error.aspx");
+                ManejoError.Agrego(HttpContext.Current, ex);
             }
         }
 
-        protected void btnCancelar_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Default.aspx", false);
-        }
+
 
         protected void txtImagen_TextChanged(object sender, EventArgs e)
         {
@@ -130,8 +109,6 @@ namespace articulos_web
                 imgArticulo.ImageUrl = Validar.imagenHolder();
             else
                 imgArticulo.ImageUrl = txtImagen.Text;
-
-
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
@@ -146,7 +123,6 @@ namespace articulos_web
             {
                 if (chkConfirmo.Checked)
                 {
-
                     ArticuloNegocio negocio = new ArticuloNegocio();
                     negocio.eliminar(int.Parse(txtId.Text));
                     Response.Redirect("Default.aspx", false);
@@ -155,8 +131,7 @@ namespace articulos_web
             catch (Exception ex)
             {
 
-                Session.Add("error", ex.ToString());
-                Response.Redirect("Error.aspx", false);
+                ManejoError.Agrego(HttpContext.Current, ex);
             }
         }
     }

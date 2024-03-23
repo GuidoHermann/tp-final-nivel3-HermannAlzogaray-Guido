@@ -13,34 +13,40 @@ namespace articulos_web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            imgAvatar.ImageUrl = "https://previews.123rf.com/images/salamatik/salamatik1801/salamatik180100019/92979836-perfil-an%C3%B3nimo-icono-de-la-cara-persona-silueta-gris-avatar-masculino-por-defecto-foto-de.jpg";
             //pregunto a cuales paginas se puede acceder sin estar logeado
-            if (!(Page is Login || Page is Registro || Page is Default || Page is Error  ))
+
+            if (Seguridad.sesionActiva(Session["usuario"]))
+            {
+                Usuario usuario = (Usuario)Session["usuario"];
+                if (!string.IsNullOrEmpty(usuario.Nombre))
+                    lblUser.Text = usuario.Nombre.ToUpper();
+                else
+                    lblUser.Text = usuario.Email;
+
+                if (!string.IsNullOrEmpty(usuario.ImagenPerfil))
+                    imgAvatar.ImageUrl = "~/Images/" + usuario.ImagenPerfil;
+                else
+                    imgAvatar.ImageUrl = "https://previews.123rf.com/images/salamatik/salamatik1801/salamatik180100019/92979836-perfil-an%C3%B3nimo-icono-de-la-cara-persona-silueta-gris-avatar-masculino-por-defecto-foto-de.jpg";
+            }
+            else
+            {
+                
+                imgAvatar.ImageUrl = "https://previews.123rf.com/images/salamatik/salamatik1801/salamatik180100019/92979836-perfil-an%C3%B3nimo-icono-de-la-cara-persona-silueta-gris-avatar-masculino-por-defecto-foto-de.jpg";
+            }
+
+            if (!(Page is Login || Page is Registro || Page is Default || Page is Error))
             {
                 if (!Seguridad.sesionActiva(Session["usuario"]))
                     Response.Redirect("Login.aspx", false);
-                else
-                {
-                    //si la sesion esta actica, verifico el nombre y la imagen
-                    Usuario usuario= (Usuario)Session["usuario"];
-                    if (!string.IsNullOrEmpty(usuario.Nombre))
-                        lblUser.Text = usuario.Nombre.ToUpper();
-                    else
-                        lblUser.Text = usuario.Email;
-
-                    if (!string.IsNullOrEmpty(usuario.ImagenPerfil))
-                        imgAvatar.ImageUrl = "~/Images/" + usuario.ImagenPerfil;
-
-                        
-                }
+                
             }
 
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
         }
 
         protected void btnSalir_Click(object sender, EventArgs e)
@@ -48,5 +54,7 @@ namespace articulos_web
             Session.Clear();
             Response.Redirect("Login.aspx", false);
         }
+
+        
     }
 }

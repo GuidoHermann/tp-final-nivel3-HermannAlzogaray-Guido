@@ -12,5 +12,12 @@ namespace articulos_web
         protected void Application_Start(object sender, EventArgs e)
         {
         }
+
+        void Application_Error(object sender, EventArgs e)
+        {
+            Exception ex = Server.GetLastError();
+            Session.Add("error", ex.ToString());
+            Server.Transfer("Error.aspx");
+        }
     }
 }

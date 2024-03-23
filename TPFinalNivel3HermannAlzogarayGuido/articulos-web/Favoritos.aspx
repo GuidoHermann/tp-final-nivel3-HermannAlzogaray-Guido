@@ -13,13 +13,18 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager ID="scripManFavoritos" runat="server" />
 
-<header class="bg-dark text-white text-center rounded-3">
-    <h1>Hola!</h1>
-    <p>Llegaste a la página de tus articulos favoritos.</p>
+    <header class="bg-dark text-white text-center rounded-3">
+        <h1>Bienvenido a tus Artículos Favoritos</h1>
+        <p>Descubre y gestiona aquí todos los artículos que has marcado como favoritos. ¡Disfruta de una selección personalizada de tus artículos preferidos!</p>
 
-</header>
+    </header>
 
     <main>
+
+        <%if (repFavoritos.Items.Count > 0)
+            {
+
+        %>
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <asp:Repeater ID="repFavoritos" runat="server">
                 <ItemTemplate>
@@ -45,5 +50,18 @@
                 </ItemTemplate>
             </asp:Repeater>
         </div>
+        <%}
+            else
+            {  %>
+        <div class="bg-dark text-white text-center rounded-3">
+            <div>
+                <h3>No hay ningún artículo en favoritos</h3>
+                <p>Si quieres agregar un artículo favorito, ve al inicio.</p>
+            </div>
+            <div>
+                <a href="Default.aspx" class="mb-3 btn btn-secondary">Inicio</a>
+            </div>
+        </div>
+        <%} %>
     </main>
 </asp:Content>
