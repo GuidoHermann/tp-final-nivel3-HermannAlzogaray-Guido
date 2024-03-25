@@ -123,8 +123,9 @@ namespace articulos_web
             {
                 if (chkConfirmo.Checked)
                 {
+                    Usuario usuario = (Usuario)Session["usuario"];
                     ArticuloNegocio negocio = new ArticuloNegocio();
-                    negocio.eliminar(int.Parse(txtId.Text));
+                    negocio.eliminar(usuario,int.Parse(txtId.Text));
                     Response.Redirect("Default.aspx", false);
                 }
             }

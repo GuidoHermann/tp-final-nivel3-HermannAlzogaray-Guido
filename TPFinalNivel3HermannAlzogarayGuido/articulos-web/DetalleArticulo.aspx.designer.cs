@@ -87,15 +87,6 @@ namespace articulos_web
         protected global::System.Web.UI.WebControls.Image imgDetalle;
 
         /// <summary>
-        /// Control btnAgregarFavorito.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAgregarFavorito;
-
-        /// <summary>
         /// Control lblFavorito.
         /// </summary>
         /// <remarks>
@@ -103,5 +94,14 @@ namespace articulos_web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblFavorito;
+
+        /// <summary>
+        /// Control btnAgregarFavorito.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAgregarFavorito;
     }
 }

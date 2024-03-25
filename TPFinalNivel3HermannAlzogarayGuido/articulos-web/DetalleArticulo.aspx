@@ -56,14 +56,15 @@
                 <asp:UpdatePanel runat="server">
                     <ContentTemplate>
                         <div class="mb-3 ">
+                            <div class="mb-3">
+                                <asp:Label ID="lblFavorito" Text="&#9757 Tu artículo ha sido añadido a favoritos." ForeColor="Yellow" runat="server" Visible="false" />
+                            </div>
                             <div class="button-group">
                                 <asp:Button ID="btnAgregarFavorito" runat="server" CssClass="btn btn-warning" Text="Agregar a Favoritos" OnClick="btnAgregarFavorito_Click" />
                                 <a href="Favoritos.aspx" class="btn btn-warning">Ver Favoritos</a>
                                 <a href="javascript:history.back()" class="btn btn-secondary">Volver</a>
                             </div>
-                            <div class="feedback-message">
-                                <asp:Label ID="lblFavorito" Text="" runat="server" CssClass="feedback-text" />
-                            </div>
+
                         </div>
                     </ContentTemplate>
                 </asp:UpdatePanel>

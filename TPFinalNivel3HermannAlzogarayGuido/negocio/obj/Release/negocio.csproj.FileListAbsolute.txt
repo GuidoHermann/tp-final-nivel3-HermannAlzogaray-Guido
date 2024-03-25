@@ -1,0 +1,9 @@
+C:\Users\guido\Desktop\Curso C# Nivel 3 TP\TPFinalNivel3HermannAlzogarayGuido\negocio\bin\Release\negocio.dll
+C:\Users\guido\Desktop\Curso C# Nivel 3 TP\TPFinalNivel3HermannAlzogarayGuido\negocio\bin\Release\negocio.pdb
+C:\Users\guido\Desktop\Curso C# Nivel 3 TP\TPFinalNivel3HermannAlzogarayGuido\negocio\bin\Release\dominio.dll
+C:\Users\guido\Desktop\Curso C# Nivel 3 TP\TPFinalNivel3HermannAlzogarayGuido\negocio\bin\Release\dominio.pdb
+C:\Users\guido\Desktop\Curso C# Nivel 3 TP\TPFinalNivel3HermannAlzogarayGuido\negocio\obj\Release\negocio.csproj.AssemblyReference.cache
+C:\Users\guido\Desktop\Curso C# Nivel 3 TP\TPFinalNivel3HermannAlzogarayGuido\negocio\obj\Release\negocio.csproj.CoreCompileInputs.cache
+C:\Users\guido\Desktop\Curso C# Nivel 3 TP\TPFinalNivel3HermannAlzogarayGuido\negocio\obj\Release\negocio.csproj.Up2Date
+C:\Users\guido\Desktop\Curso C# Nivel 3 TP\TPFinalNivel3HermannAlzogarayGuido\negocio\obj\Release\negocio.dll
+C:\Users\guido\Desktop\Curso C# Nivel 3 TP\TPFinalNivel3HermannAlzogarayGuido\negocio\obj\Release\negocio.pdb

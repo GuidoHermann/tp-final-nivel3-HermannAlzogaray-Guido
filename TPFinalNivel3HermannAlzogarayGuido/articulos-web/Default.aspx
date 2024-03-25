@@ -4,7 +4,7 @@
     <style>
         .card-img-top {
             max-width: 100%;
-            max-height: 200px;
+            max-height: 200px; /*cantidad de pixeles de la imagen*/
             width: auto;
             height: auto;
         }
@@ -51,8 +51,14 @@
                                 <asp:UpdatePanel runat="server">
                                     <ContentTemplate>
                                         <div class="card-footer d-flex justify-content-between">
+                                            <asp:Label ID="lblFavoritoAgregado" Text="&#9757 Tu artículo ha sido añadido a favoritos." ForeColor="Yellow" Visible="false" runat="server" />
+
+                                        </div>
+                                        <div class="card-footer d-flex justify-content-between">
+
                                             <asp:LinkButton ID="btnAgregarFavorito" runat="server" Text="Agregar a Favoritos" CommandName="AgregarFavorito" CommandArgument='<%#Eval("IdArticulo") %>' OnClick="btnAgregarFavorito_Click" CssClass="btn btn-warning"></asp:LinkButton>
                                             <asp:LinkButton ID="btnVerDetalle" runat="server" OnClick="btnVerDetalle_Click" CommandName="VerDetalle" CommandArgument='<%#Eval("IdArticulo") %>' CssClass="btn btn-primary ">Ver Detalle</asp:LinkButton>
+
                                         </div>
                                     </ContentTemplate>
                                 </asp:UpdatePanel>
@@ -62,13 +68,14 @@
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>
+                <
             </div>
             <%}
                 else
                 {  %>
             <div class="bg-dark text-white text-center rounded-3">
                 <div>
-                    <h3>No hay ningún artículo en home!!!!</h3>                  
+                    <h3>No hay ningún artículo en home!!!!</h3>
                     <p>Si quieres agregar un artículo, ve al formulario.</p>
                 </div>
                 <div>

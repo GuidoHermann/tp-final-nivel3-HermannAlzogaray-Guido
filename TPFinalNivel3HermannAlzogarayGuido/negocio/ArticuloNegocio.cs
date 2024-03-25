@@ -52,8 +52,10 @@ namespace negocio
 
                     listadb.Add(aux);
                 }
-
-                return listadb;
+               
+                    return listadb;
+               
+                
             }
             catch (Exception ex)
             {
@@ -124,7 +126,7 @@ namespace negocio
             }
         }
 
-        public void eliminar(int id)
+        public void eliminar(Usuario usuario,int id)
         {
             AccesoDb acceso = new AccesoDb();
             try
@@ -132,7 +134,11 @@ namespace negocio
                 acceso.establecerConsulta("Delete from ARTICULOS where id = @id");
                 acceso.establecerParametro("id", id);
                 acceso.ejecutarAccion();
-
+                //despues de eliminar el articulo, tambien lo elimino de favoritos
+                acceso.establecerConsulta("DELETE FROM Favoritos WHERE IdUser = @IdUser AND IdArticulo = @IdArticulo");
+                acceso.establecerParametro("@IdUser", usuario.Id);
+                acceso.establecerParametro("@IdArticulo", id);
+                acceso.ejecutarAccion();
             }
             catch (Exception ex)
             {
@@ -215,20 +221,6 @@ namespace negocio
                             break;
                     }
                 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 acceso.establecerConsulta(consulta);
                 acceso.ejectuarLectura();
 
@@ -254,8 +246,6 @@ namespace negocio
 
                     aux.Categoria.Id = (int)acceso.Lector["IdCategoria"];
                     aux.Categoria.Descripcion = (string)acceso.Lector["DescripcionCategoria"];
-
-
 
 
                     lista.Add(aux);

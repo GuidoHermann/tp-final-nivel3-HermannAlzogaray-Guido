@@ -11,9 +11,11 @@ namespace articulos_web
 {
     public partial class Default : System.Web.UI.Page
     {
+
         public List<Articulo> ListaArticulos { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+
             try
             {
                 //cargo el load de la pagina default con las cartas desde la DB
@@ -52,6 +54,9 @@ namespace articulos_web
                     Articulo articulo = ListaArticulos.FirstOrDefault(a => a.IdArticulo == int.Parse(idArticulo));
                     FavoritoNegocio favoritoNegocio = new FavoritoNegocio();
                     favoritoNegocio.AgregarFavorito(usuario, articulo);
+                    Label lblFavorito = (Label)((Control)sender).Parent.FindControl("lblFavoritoAgregado");
+                    lblFavorito.Visible = true;
+
                 }
                 else
                 {
@@ -63,5 +68,7 @@ namespace articulos_web
                 ManejoError.Agrego(HttpContext.Current, ex);
             }
         }
+
+
     }
 }

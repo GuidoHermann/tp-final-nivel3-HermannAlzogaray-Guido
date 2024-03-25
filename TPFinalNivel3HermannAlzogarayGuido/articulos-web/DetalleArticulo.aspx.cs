@@ -77,7 +77,7 @@ namespace articulos_web
                     Articulo articulo = articuloNegocio.listar(idArticulo)[0];
                     FavoritoNegocio favoritoNegocio = new FavoritoNegocio();
                     favoritoNegocio.AgregarFavorito(usuario, articulo);
-                    lblFavorito.Text = "Tu articulo ha sido añadido a favoritos";
+                    lblFavorito.Visible = true;
                 }
                 else
                 {
